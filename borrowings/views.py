@@ -33,6 +33,11 @@ class BorrowingViewSet(
 
     def filter_queryset(self, queryset):
         current_user = self.request.user
+        is_active = self.request.query_params.get("is_active")
+
+        if is_active:
+            queryset = queryset.filter(actual_return_date__isnull=True)
+
         if not current_user.is_staff:
             queryset = queryset.filter(user=current_user)
 
