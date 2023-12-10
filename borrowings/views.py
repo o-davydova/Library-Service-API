@@ -41,6 +41,12 @@ class BorrowingViewSet(
         if not current_user.is_staff:
             queryset = queryset.filter(user=current_user)
 
+        else:
+            user_id = self.request.query_params.get("user_id")
+
+            if user_id:
+                queryset = queryset.filter(user_id=user_id)
+
         return queryset
 
     def perform_create(self, serializer):
