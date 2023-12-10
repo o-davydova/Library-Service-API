@@ -1,6 +1,7 @@
 from datetime import timedelta
 
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import F, Q
 from django.utils import timezone
@@ -43,6 +44,34 @@ class Borrowing(models.Model):
                 name="expected_return_date_within_two_weeks",
             ),
         ]
+
+    @staticmethod
+    def validate_inventory(book, error_to_raise):
+        if book.inventory <= 0:
+            raise error_to_raise(
+                {
+                    "book": f"All copies of the '{book.title}' "
+                    f"are currently unavailable for borrowing."
+                }
+            )
+
+    def clean(self):
+        Borrowing.validate_inventory(
+            self.book,
+            ValidationError,
+        )
+
+    def save(
+        self,
+        force_insert=False,
+        force_update=False,
+        using=None,
+        update_fields=None,
+    ):
+        self.full_clean()
+        return super(Borrowing, self).save(
+            force_insert, force_update, using, update_fields
+        )
 
     def __str__(self):
         return f"{self.book} borrowed by {self.user}"
