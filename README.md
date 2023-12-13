@@ -1,5 +1,7 @@
 # Library Service API
-> **Welcome to the online management system for book borrowings** 
+> **Welcome to the online management system for book borrowings**
+> 
+[![My Trello board](https://img.shields.io/badge/View%20on%20Trello-blue?style=flat&logo=trello)](https://trello.com/invite/b/RlhAlH1X/ATTI7bba32db360a3ad41147b6c4f6436225805E9701/library-service-api)
 
 ###### The system optimizes the work of library administrators and makes the service much more user-friendly.
 
