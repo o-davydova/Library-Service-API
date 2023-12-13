@@ -1,5 +1,7 @@
 # Library Service API
-> **Welcome to the online management system for book borrowings** 
+> **Welcome to the online management system for book borrowings**
+> 
+[![My Trello board](https://img.shields.io/badge/View%20on%20Trello-blue?style=flat&logo=trello)](https://trello.com/invite/b/RlhAlH1X/ATTI7bba32db360a3ad41147b6c4f6436225805E9701/library-service-api)
 
 ###### The system optimizes the work of library administrators and makes the service much more user-friendly.
 
@@ -28,6 +30,57 @@ Improved user experience during work with the `ModHeader` Chrome extension by ch
 - **Swagger UI:** Access the Swagger UI for interactive API documentation at `/api/doc/swagger/`.
 - **Redoc UI:** Utilize Redoc for clean and readable API documentation at `/api/doc/redoc/`.
 - **Schema Endpoint:** The API schema is available at `/api/schema/`.
+
+## Test Coverage Report
+
+```plaintext
+Name                                                                    Stmts   Miss  Cover
+-------------------------------------------------------------------------------------------
+books\__init__.py                                                           0      0   100%
+books\admin.py                                                              3      2    33%
+books\apps.py                                                               4      0   100%
+books\migrations\0001_initial.py                                            5      0   100%
+books\migrations\__init__.py                                                0      0   100%
+books\models.py                                                            12      1    92%
+books\permissions.py                                                        4      0   100%
+books\serializers.py                                                        6      0   100%
+books\tests\__init__.py                                                     0      0   100%
+books\tests\test_book_api.py                                               72      0   100%
+books\urls.py                                                               6      0   100%
+books\views.py                                                              8      0   100%
+borrowings\__init__.py                                                      0      0   100%
+borrowings\admin.py                                                         7      6    14%
+borrowings\apps.py                                                          4      0   100%
+borrowings\migrations\0001_initial.py                                       7      0   100%
+borrowings\migrations\0002_borrowing_borrow_date_not_past_and_more.py       7      0   100%
+borrowings\migrations\0003_remove_borrowing_borrow_date_not_past.py         4      0   100%
+borrowings\migrations\__init__.py                                           0      0   100%
+borrowings\models.py                                                       27      2    93%
+borrowings\serializers.py                                                  44      0   100%
+borrowings\tests\__init__.py                                                0      0   100%
+borrowings\tests\test_borrowing_api.py                                    137      0   100%
+borrowings\urls.py                                                          6      0   100%
+borrowings\views.py                                                        49      0   100%
+library_service_api\__init__.py                                             0      0   100%
+library_service_api\settings.py                                            26      0   100%
+library_service_api\urls.py                                                 4      0   100%
+manage.py                                                                  12      2    83%
+telegram_api\__init__.py                                                    0      0   100%
+telegram_api\telegram_helper.py                                            12      2    83%
+users\__init__.py                                                           0      0   100%
+users\admin.py                                                             12     11     8%
+users\apps.py                                                               4      0   100%
+users\migrations\0001_initial.py                                            7      0   100%
+users\migrations\__init__.py                                                0      0   100%
+users\models.py                                                            36      8    78%
+users\serializers.py                                                       17      7    59%
+users\tests\__init__.py                                                     0      0   100%
+users\tests\test_user_api.py                                                0      0   100%
+users\urls.py                                                               5      0   100%
+users\views.py                                                             13      1    92%
+-------------------------------------------------------------------------------------------
+TOTAL                                                                     560     42    92%
+```
 
 ## Usage
 
